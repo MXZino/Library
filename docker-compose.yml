@@ -1,0 +1,16 @@
+version: '3.1'
+
+services:
+
+  library-databse:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: library-db-pass
+
+  library-endpoints:
+    build: ./src/backend/Library/Library.Endpoints/.
+    ports:
+      - 8080:8080
+    depends_on:
+      - library-databse

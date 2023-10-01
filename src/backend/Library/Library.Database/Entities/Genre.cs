@@ -1,6 +1,10 @@
-﻿namespace Library.Database.Entities;
+﻿using System.ComponentModel.DataAnnotations;
+using Library.Database.Abstract.Base;
 
-public class Genre
+namespace Library.Database.Entities;
+
+public class Genre : BaseEntity
 {
-    
+    [Required]
+    public string Name { get; set; }
 }
