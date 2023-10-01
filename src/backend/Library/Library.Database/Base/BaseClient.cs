@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Library.Database.Models;
+namespace Library.Database.Base;
 
-public class Client
+public abstract class BaseClient
 {
     [Required] 
     public string FirstName { get; set; }

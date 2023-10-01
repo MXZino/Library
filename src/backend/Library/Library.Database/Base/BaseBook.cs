@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Library.Database.Models;
+namespace Library.Database.Base;
 
-public class Book
+public abstract class BaseBook
 {
     [Required]
     public string Title { get; set; }
@@ -10,7 +10,7 @@ public class Book
     [Required]
     public Guid AuthorId { get; set; }
     
-    public Author? Author { get; set; }
+    public BaseAuthor? Author { get; set; }
     
     [Required]
     public string Ibnr { get; set; }
@@ -18,5 +18,5 @@ public class Book
     [Required]
     public int Year { get; set; }
     
-    public ICollection<Genre> Genres { get; set; }
+    public ICollection<BaseGenre> Genres { get; set; }
 }

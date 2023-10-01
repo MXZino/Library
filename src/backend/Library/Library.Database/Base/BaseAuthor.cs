@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Library.Database.Models;
+namespace Library.Database.Base;
 
-public class Author
+public abstract class BaseAuthor
 {
     [Required]
     public string FirstName { get; set; }
@@ -10,5 +10,5 @@ public class Author
     [Required]
     public string LastName { get; set; }
     
-    public ICollection<Book> Books { get; set; }
+    public ICollection<BaseBook> Books { get; set; }
 }

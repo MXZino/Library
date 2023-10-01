@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Library.Database.Models;
+namespace Library.Database.Base;
 
-public class Genre
+public abstract class BaseGenre
 {
     [Required]
     public string Name { get; set; }

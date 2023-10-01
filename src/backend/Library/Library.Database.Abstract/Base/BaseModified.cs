@@ -2,8 +2,7 @@
 
 namespace Library.Database.Abstract.Base;
 
-public abstract class BaseModified : IModification
+public abstract class BaseModified : BaseEntity, IModification
 {
-    public Guid Id { get; set; }
     public DateTimeOffset Modified => DateTimeOffset.Now;
 }
