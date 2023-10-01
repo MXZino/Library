@@ -2,15 +2,22 @@ version: '3.1'
 
 services:
 
-  library-databse:
+  library-database:
+    container_name: Library.Database
+    ports:
+      - 8079:5432
     image: postgres
     restart: always
     environment:
-      POSTGRES_PASSWORD: library-db-pass
+      - POSTGRES_DB=library.db
+      - POSTGRES_PASSWORD=Library-pass
+      - POSTGRES_USER=Library
 
   library-endpoints:
+    container_name: Library.Endpoints
     build: ./src/backend/Library/Library.Endpoints/.
     ports:
       - 8080:8080
     depends_on:
-      - library-databse
+      - library-database
+      

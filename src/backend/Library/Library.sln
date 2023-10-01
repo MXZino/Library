@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Errors", "Library.E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Endpoints", "Library.Endpoints\Library.Endpoints.csproj", "{BFDC2731-78E1-488D-88A9-1B4E749E8C49}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Configuration.Services", "Library.Configuration.Services\Library.Configuration.Services.csproj", "{774EF991-6426-4599-9CE7-51E137868029}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,6 +38,10 @@ Global
 		{BFDC2731-78E1-488D-88A9-1B4E749E8C49}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BFDC2731-78E1-488D-88A9-1B4E749E8C49}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BFDC2731-78E1-488D-88A9-1B4E749E8C49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{774EF991-6426-4599-9CE7-51E137868029}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{774EF991-6426-4599-9CE7-51E137868029}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{774EF991-6426-4599-9CE7-51E137868029}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{774EF991-6426-4599-9CE7-51E137868029}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 	EndGlobalSection

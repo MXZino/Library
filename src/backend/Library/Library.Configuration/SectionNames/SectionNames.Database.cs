@@ -6,7 +6,13 @@
 public static partial class SectionNames
 {
     /// <summary>
-    /// Gets connection string.
+    /// Gets database sections.
     /// </summary>
-    public static string ConnectionString => "Database:ConnectionString";
+    public static class Database
+    {
+        /// <summary>
+        /// Gets connection string.
+        /// </summary>
+        public static string ConnectionString => "Database:ConnectionString";
+    }
 }
