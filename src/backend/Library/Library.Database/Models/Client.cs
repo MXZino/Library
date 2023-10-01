@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Library.Core.Database.Models;
+namespace Library.Database.Models;
 
 public class Client
 {

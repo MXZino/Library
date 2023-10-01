@@ -1,6 +1,6 @@
-﻿using Library.Core.Database.Abstract.Interfaces;
+﻿using Library.Database.Abstract.Interfaces;
 
-namespace Library.Core.Database.Abstract.Base;
+namespace Library.Database.Abstract.Base;
 
 public abstract class BaseModified : IModification
 {

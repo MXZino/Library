@@ -6,9 +6,11 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <InvariantGlobalization>true</InvariantGlobalization>
         <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+        <RootNamespace>Library.Endpoints</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="Ardalis.ApiEndpoints" Version="4.1.0" />
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.0-preview.7.23375.9"/>
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0"/>
     </ItemGroup>

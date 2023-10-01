@@ -1,4 +1,4 @@
-﻿namespace Library.Core.Database.Abstract.Interfaces;
+﻿namespace Library.Database.Abstract.Interfaces;
 
 public interface IModification : IEntity
 {
