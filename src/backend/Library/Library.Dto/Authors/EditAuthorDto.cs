@@ -1,9 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using Library.Database.Abstract.Base;
 
-namespace Library.Database.Entities;
+namespace Library.Dto.Authors;
 
-public class Author : BaseEntity
+public class EditAuthorDto
 {
     [Required]
     public string FirstName { get; set; }
@@ -12,9 +11,7 @@ public class Author : BaseEntity
     public string LastName { get; set; }
     
     [Required]
-    public DateTimeOffset DateOfBirth { get; set; }
+    public DateTime DateOfBirth { get; set; }
     
     public string Description { get; set; }
-    
-    public ICollection<Book> Books { get; set; }
 }

@@ -11,7 +11,7 @@ public class Book : BaseEntity
     [Required]
     public Guid AuthorId { get; set; }
     
-    public Author? Author { get; set; }
+    public Author Author { get; set; }
     
     [Required]
     public string Ibnr { get; set; }
@@ -19,5 +19,4 @@ public class Book : BaseEntity
     [Required]
     public int Year { get; set; }
     
-    public ICollection<Genre> Genres { get; set; }
 }
