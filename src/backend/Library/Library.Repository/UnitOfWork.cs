@@ -21,9 +21,5 @@ public class UnitOfWork : IUnitOfWork
     
     public async Task Save() => await _dbContext.SaveChangesAsync();
 
-    public void Dispose()
-    {
-        _dbContext.Dispose();
-    }
-    
+    public void Dispose() => _dbContext.Dispose();
 }
