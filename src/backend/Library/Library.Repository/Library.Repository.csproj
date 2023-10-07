@@ -11,4 +11,9 @@
       <ProjectReference Include="..\Library.Repository.Abstract\Library.Repository.Abstract.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Models\Authors\" />
+      <Folder Include="Models\Books\" />
+    </ItemGroup>
+
 </Project>
