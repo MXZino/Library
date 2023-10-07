@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <RootNamespace>Library.AutoMapper</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Library.Database\Library.Database.csproj" />
+      <ProjectReference Include="..\Library.Dto\Library.Dto.csproj" />
+    </ItemGroup>
+
+
+</Project>

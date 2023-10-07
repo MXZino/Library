@@ -22,6 +22,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Repository", "Libra
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Repository.Abstract", "Library.Repository.Abstract\Library.Repository.Abstract.csproj", "{1C631ED1-E7F9-4A77-9593-6B891DCDB93A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Mapper", "Library.Mapper\Library.Mapper.csproj", "{AAF791DA-FF9A-4328-96AE-8ABFF5D1CA6F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -72,6 +74,10 @@ Global
 		{1C631ED1-E7F9-4A77-9593-6B891DCDB93A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C631ED1-E7F9-4A77-9593-6B891DCDB93A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C631ED1-E7F9-4A77-9593-6B891DCDB93A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAF791DA-FF9A-4328-96AE-8ABFF5D1CA6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAF791DA-FF9A-4328-96AE-8ABFF5D1CA6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAF791DA-FF9A-4328-96AE-8ABFF5D1CA6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAF791DA-FF9A-4328-96AE-8ABFF5D1CA6F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 	EndGlobalSection

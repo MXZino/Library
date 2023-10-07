@@ -2,7 +2,7 @@
 
 public static class ApiConfiguration
 {
-    public const string Authors = "authors";
+    public const string Authors = "api/authors";
 
-    public const string Books = "books";
+    public const string Books = "api/books";
 }

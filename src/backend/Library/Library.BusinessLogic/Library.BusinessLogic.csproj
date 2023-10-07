@@ -4,10 +4,22 @@
         <TargetFramework>net8.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <LangVersion>preview</LangVersion>
     </PropertyGroup>
 
     <ItemGroup>
       <PackageReference Include="MediatR" Version="12.1.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Queries\Authors\" />
+      <Folder Include="QueryHandlers\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Library.Dto\Library.Dto.csproj" />
+      <ProjectReference Include="..\Library.Mapper\Library.Mapper.csproj" />
+      <ProjectReference Include="..\Library.Repository.Abstract\Library.Repository.Abstract.csproj" />
     </ItemGroup>
 
 </Project>

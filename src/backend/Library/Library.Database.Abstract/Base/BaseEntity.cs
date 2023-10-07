@@ -8,5 +8,5 @@ public abstract class BaseEntity : IEntity
     
     public DateTimeOffset Modified { get; set; }
     
-    public DateTimeOffset Created { get; }
+    public DateTimeOffset Created { get; set; } = DateTimeOffset.Now;
 }

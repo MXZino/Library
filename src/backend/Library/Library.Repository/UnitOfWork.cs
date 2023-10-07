@@ -19,7 +19,7 @@ public class UnitOfWork : IUnitOfWork
 
     public IBookRepository Books => new BookRepository(_dbContext);
     
-    public async Task Save() => await _dbContext.SaveChangesAsync();
+    public async Task Save() => await _dbContext.Save();
 
     public void Dispose() => _dbContext.Dispose();
 }

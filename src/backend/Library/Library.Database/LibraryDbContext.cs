@@ -1,5 +1,6 @@
 ﻿using Library.Configuration.Extensions;
 using Library.Configuration.SectionNames;
+using Library.Database.Abstract.Base;
 using Microsoft.Extensions.Configuration;
 
 namespace Library.Database;
@@ -16,10 +17,6 @@ public class LibraryDbContext : DbContext
 
     public DbSet<Book> Books { get; set; }
 
-    public DbSet<Client> Clients { get; set; }
-
-    public DbSet<Genre> Genres { get; set; }
-
     private readonly IConfiguration _configuration;
 
     public LibraryDbContext(IConfiguration configuration)
@@ -29,4 +26,21 @@ public class LibraryDbContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) => 
         optionsBuilder.UseNpgsql(_configuration.GetString(SectionNames.Database.ConnectionString));
+
+    public async Task Save()
+    {
+        UpdateModifiedTimeStamp();
+        await base.SaveChangesAsync();
+    }
+    
+    private void UpdateModifiedTimeStamp()
+    {
+        var entries = ChangeTracker.Entries()
+            .Where(e => e.Entity is BaseEntity && e.State is EntityState.Modified or EntityState.Added);
+       
+        foreach (var entityEntry in entries)
+        {
+            ((BaseEntity)entityEntry.Entity).Modified = DateTimeOffset.Now;
+        }
+    }
 }
