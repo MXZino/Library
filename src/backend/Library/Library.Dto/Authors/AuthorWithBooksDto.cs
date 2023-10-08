@@ -8,17 +8,15 @@ public class AuthorWithBooksDto
 
     public string LastName { get; set; }
 
-    public DateTime DateOfBirth { get; set; }
+    public DateTimeOffset DateOfBirth { get; set; }
     
     public string Description { get; set; }
-    
-    public uint NumberOfBooks { get; set; }
     
     public IEnumerable<BookByAuthorDto> Books { get; set; }
     
     public DateTimeOffset Modified { get; set; }
     
-    public DateTimeOffset Created { get; }
+    public DateTimeOffset Created { get; set; }
 }
 
 public class BookByAuthorDto

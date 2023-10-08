@@ -13,4 +13,17 @@ public static class AuthorExtensions
             LastName = addAuthorDto.LastName,
             DateOfBirth = addAuthorDto.DateOfBirth
         };
+
+    public static AuthorWithBooksDto ToAuthorWithBooksDto(this Author author) =>
+        new()
+        {
+            Description = author.Description,
+            FirstName = author.FirstName,
+            LastName = author.LastName,
+            DateOfBirth = author.DateOfBirth,
+            Books =  author.Books?.Select(x => x.ToBookByAuthorDto()),
+            Id = author.Id,
+            Modified = author.Modified,
+            Created = author.Created
+        };
 }

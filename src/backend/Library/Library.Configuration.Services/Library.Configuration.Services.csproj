@@ -3,7 +3,7 @@
     <PropertyGroup>
         <TargetFramework>net8.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
+        <Nullable>disable</Nullable>
     </PropertyGroup>
 
     <ItemGroup>
@@ -24,6 +24,8 @@
     <ItemGroup>
       <ProjectReference Include="..\Library.BusinessLogic\Library.BusinessLogic.csproj" />
       <ProjectReference Include="..\Library.Database\Library.Database.csproj" />
+      <ProjectReference Include="..\Library.Errors.Abstract\Library.Errors.Abstract.csproj" />
+      <ProjectReference Include="..\Library.Errors\Library.Errors.csproj" />
       <ProjectReference Include="..\Library.Repository.Abstract\Library.Repository.Abstract.csproj" />
       <ProjectReference Include="..\Library.Repository\Library.Repository.csproj" />
     </ItemGroup>

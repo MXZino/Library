@@ -12,12 +12,8 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Queries\Authors\" />
-      <Folder Include="QueryHandlers\" />
-    </ItemGroup>
-
-    <ItemGroup>
       <ProjectReference Include="..\Library.Dto\Library.Dto.csproj" />
+      <ProjectReference Include="..\Library.Errors\Library.Errors.csproj" />
       <ProjectReference Include="..\Library.Mapper\Library.Mapper.csproj" />
       <ProjectReference Include="..\Library.Repository.Abstract\Library.Repository.Abstract.csproj" />
     </ItemGroup>

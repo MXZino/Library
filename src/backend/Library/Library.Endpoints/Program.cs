@@ -16,6 +16,8 @@ var app = builder.Build();
 
 app.MigrateLibraryDb();
 
+app.UseLibraryExceptionHandler();
+
 app.Swagger();
 
 app.UseHttpsRedirection();

@@ -12,7 +12,7 @@ public class RepositoryBase<T> : IRepositoryBase<T> where T : class, IEntity
         DatabaseContext = libraryDbContext;
     }
     
-    public virtual T Get(Guid id) => DatabaseContext.Set<T>().First(x => x.Id == id);
+    public virtual T? Get(Guid id) => DatabaseContext.Set<T>().FirstOrDefault(x => x.Id == id);
 
     public virtual IEnumerable<T> GetAll() => DatabaseContext.Set<T>();
 
