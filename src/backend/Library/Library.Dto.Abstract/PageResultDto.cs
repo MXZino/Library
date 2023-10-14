@@ -2,7 +2,7 @@
 
 public class PageResultDto<TDto>
 {
-    public List<TDto> Items { get; set; } 
+    public IEnumerable<TDto> Items { get; set; } 
     
     public int CurrentPage { get; set; } 
     

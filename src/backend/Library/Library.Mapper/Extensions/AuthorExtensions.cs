@@ -1,5 +1,7 @@
 ﻿using Library.Database.Entities;
+using Library.Dto.Abstract;
 using Library.Dto.Authors;
+using Library.Repository.Abstract;
 
 namespace Library.AutoMapper.Extensions;
 
@@ -33,5 +35,15 @@ public static class AuthorExtensions
         author.Description = editAuthorDto.Description;
         author.FirstName = editAuthorDto.FirstName;
         author.LastName = editAuthorDto.LastName;
-    } 
+    }
+
+    public static PageResultDto<AuthorWithBooksDto> ToAuthorsWithBooksDto(this PageResult<Author> pageResult) =>
+        new()
+        {
+            CurrentPage = pageResult.CurrentPage,
+            TotalCount = pageResult.TotalCount,
+            TotalPages = pageResult.TotalPages,
+            PageSize = pageResult.PageSize,
+            Items = pageResult.Items.Select(x => x.ToAuthorWithBooksDto())
+        };
 }

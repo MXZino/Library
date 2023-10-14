@@ -10,6 +10,7 @@
     <ItemGroup>
       <ProjectReference Include="..\Library.Database\Library.Database.csproj" />
       <ProjectReference Include="..\Library.Dto\Library.Dto.csproj" />
+      <ProjectReference Include="..\Library.Repository.Abstract\Library.Repository.Abstract.csproj" />
     </ItemGroup>
 
 
