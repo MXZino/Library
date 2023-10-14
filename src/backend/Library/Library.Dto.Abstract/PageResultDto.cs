@@ -1,6 +1,6 @@
 ﻿namespace Library.Dto.Abstract;
 
-public abstract class PageResult<TDto>
+public class PageResultDto<TDto>
 {
     public List<TDto> Items { get; set; } 
     
@@ -8,7 +8,7 @@ public abstract class PageResult<TDto>
     
     public int TotalPages { get; set; }
     
-    public int PageSize { get; set; }
+    public uint PageSize { get; set; }
     
     public int TotalCount { get; set; }
 

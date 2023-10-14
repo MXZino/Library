@@ -26,4 +26,12 @@ public static class AuthorExtensions
             Modified = author.Modified,
             Created = author.Created
         };
+
+    public static void Map(this EditAuthorDto editAuthorDto, Author author)
+    {
+        author.DateOfBirth = editAuthorDto.DateOfBirth;
+        author.Description = editAuthorDto.Description;
+        author.FirstName = editAuthorDto.FirstName;
+        author.LastName = editAuthorDto.LastName;
+    } 
 }

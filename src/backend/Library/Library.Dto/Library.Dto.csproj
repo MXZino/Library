@@ -13,4 +13,11 @@
       <Folder Include="Books\" />
     </ItemGroup>
 
+
+
+
+    <ItemGroup>
+      <ProjectReference Include="..\Library.Dto.Abstract\Library.Dto.Abstract.csproj" />
+    </ItemGroup>
+
 </Project>

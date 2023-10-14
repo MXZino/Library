@@ -6,13 +6,8 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
-
     <ItemGroup>
-      <ProjectReference Include="..\Library.Database.Abstract\Library.Database.Abstract.csproj" />
-      <ProjectReference Include="..\Library.Database\Library.Database.csproj" />
-      <ProjectReference Include="..\Library.Dto.Abstract\Library.Dto.Abstract.csproj" />
       <ProjectReference Include="..\Library.Repository.Filters.Abstract\Library.Repository.Filters.Abstract.csproj" />
-      <ProjectReference Include="..\Library.Repository.Filters\Library.Repository.Filters.csproj" />
     </ItemGroup>
 
 </Project>
