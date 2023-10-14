@@ -17,10 +17,12 @@ public class AuthorRepository : RepositoryBase<Author>, IAuthorRepository
     {
         var query = DatabaseContext.Authors
             .Include(x => x.Books)
-            .Where(x => x.FirstName.Contains(filter.Name, StringComparison.CurrentCultureIgnoreCase) ||
-                        x.LastName.Contains(filter.Name, StringComparison.CurrentCultureIgnoreCase) ||
-                        $"{x.FirstName} {x.LastName}".Contains(filter.Name, StringComparison.CurrentCultureIgnoreCase))
             .AsQueryable();
+
+        if (!string.IsNullOrEmpty(filter.Name))
+        {
+            query = query.Where(x => x.FirstName.Contains(filter.Name) || x.LastName.Contains(filter.Name));
+        }
 
         var result = await GetPagedResultAsync(query, filter);
 

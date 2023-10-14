@@ -11,7 +11,7 @@ namespace Library.Endpoints.Endpoints.Authors;
 
 public class GetAuthorsEndpoint(IMediator mediator) : EndpointBaseAsync.WithRequest<GetAuthorsFilterDto>.WithResult<PageResultDto<AuthorWithBooksDto>>
 {
-    [HttpGet(ApiConfiguration.Authors)]
+    [HttpGet($"{ApiConfiguration.Authors}/all")]
     [SwaggerOperation(Summary = "Get authors", 
         Description = "Get authors", 
         OperationId = "Authors_Get",
