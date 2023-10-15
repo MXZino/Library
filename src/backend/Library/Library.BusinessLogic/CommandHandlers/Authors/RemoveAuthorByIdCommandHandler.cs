@@ -1,15 +1,14 @@
-﻿using Library.AutoMapper.Extensions;
-using Library.BusinessLogic.Queries.Authors;
+﻿using Library.BusinessLogic.Commands.Authors;
 using Library.Database.Entities;
 using Library.Errors;
 using Library.Repository.Abstract;
 using MediatR;
 
-namespace Library.BusinessLogic.QueryHandlers.Authors;
+namespace Library.BusinessLogic.CommandHandlers.Authors;
 
-public class RemoveAuthorByIdQueryHandler(IUnitOfWork unitOfWork) : IRequestHandler<RemoveAuthorByIdQuery>
+public class RemoveAuthorByIdCommandHandler(IUnitOfWork unitOfWork) : IRequestHandler<RemoveAuthorByIdCommand>
 {
-    public async Task Handle(RemoveAuthorByIdQuery request, CancellationToken cancellationToken)
+    public async Task Handle(RemoveAuthorByIdCommand request, CancellationToken cancellationToken)
     {
         var author = unitOfWork.Authors.Get(request.UserId);
 

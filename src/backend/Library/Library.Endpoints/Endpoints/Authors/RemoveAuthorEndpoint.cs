@@ -1,4 +1,5 @@
 ﻿using Ardalis.ApiEndpoints;
+using Library.BusinessLogic.Commands.Authors;
 using Library.BusinessLogic.Queries.Authors;
 using Library.Endpoints.Configuration;
 using MediatR;
@@ -16,7 +17,7 @@ public class RemoveAuthorEndpoint(IMediator mediator) : EndpointBaseAsync.WithRe
         Tags = new[] { "Authors" })]
     public override async Task<ActionResult> HandleAsync([FromQuery] Guid request, CancellationToken cancellationToken = new CancellationToken())
     {
-        await mediator.Send(new RemoveAuthorByIdQuery(request), cancellationToken);
+        await mediator.Send(new RemoveAuthorByIdCommand(request), cancellationToken);
 
         return NoContent();
     }

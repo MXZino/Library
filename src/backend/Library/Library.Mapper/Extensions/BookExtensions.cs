@@ -9,6 +9,7 @@ public static class BookExtensions
     public static BookByAuthorDto ToBookByAuthorDto(this Book book) =>
         new()
         {
+            Id = book.Id,
             Ibnr = book.Ibnr,
             Title = book.Title,
             Year = book.Year
