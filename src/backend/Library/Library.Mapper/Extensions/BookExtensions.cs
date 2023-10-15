@@ -1,5 +1,6 @@
 ﻿using Library.Database.Entities;
 using Library.Dto.Authors;
+using Library.Dto.Books;
 
 namespace Library.AutoMapper.Extensions;
 
@@ -11,5 +12,14 @@ public static class BookExtensions
             Ibnr = book.Ibnr,
             Title = book.Title,
             Year = book.Year
+        };
+    
+    public static Book ToEntity(this AddBookDto book) =>
+        new()
+        {
+            Ibnr = book.Ibnr,
+            Title = book.Title,
+            Year = book.Year,
+            AuthorId = book.AuthorId
         };
 }
