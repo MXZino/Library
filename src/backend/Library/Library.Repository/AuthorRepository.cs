@@ -17,11 +17,13 @@ public class AuthorRepository : RepositoryBase<Author>, IAuthorRepository
     {
         var query = DatabaseContext.Authors
             .Include(x => x.Books)
+            .OrderBy(x => x.LastName)
             .AsQueryable();
 
         if (!string.IsNullOrEmpty(filter.Name))
         {
-            query = query.Where(x => x.FirstName.Contains(filter.Name) || x.LastName.Contains(filter.Name));
+            query = query.Where(x => x.FirstName.ToLower().Contains(filter.Name.ToLower())
+                                     || x.LastName.ToLower().Contains(filter.Name.ToLower()));
         }
 
         var result = await GetPagedResultAsync(query, filter);

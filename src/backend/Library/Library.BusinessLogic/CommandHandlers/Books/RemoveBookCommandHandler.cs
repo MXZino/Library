@@ -10,7 +10,7 @@ public class RemoveBookCommandHandler(IUnitOfWork unitOfWork) : IRequestHandler<
 {
     public async Task Handle(RemoveBookCommand request, CancellationToken cancellationToken)
     {
-        var book = unitOfWork.Books.Get(request.Id);
+        var book = unitOfWork.Books.GetBookWithoutAuthor(request.Id);
 
         if (book is null)
             throw new EntityNotFoundException<Book>(request.Id);

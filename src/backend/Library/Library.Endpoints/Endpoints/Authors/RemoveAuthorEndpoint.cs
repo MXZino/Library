@@ -1,6 +1,5 @@
 ﻿using Ardalis.ApiEndpoints;
 using Library.BusinessLogic.Commands.Authors;
-using Library.BusinessLogic.Queries.Authors;
 using Library.Endpoints.Configuration;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
