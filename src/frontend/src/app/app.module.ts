@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { HomePageComponent } from './modules/shared/components/home-page/home-page.component';
 import {AppRoutingModule} from "./app-routing.module";
+import {HttpClientModule} from "@angular/common/http";
 import {AuthorsModule} from "./modules/authors/authors.module";
 
 @NgModule({
@@ -16,9 +17,12 @@ import {AuthorsModule} from "./modules/authors/authors.module";
     AuthorsModule,
     BrowserModule,
     BrowserAnimationsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
+  exports: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
