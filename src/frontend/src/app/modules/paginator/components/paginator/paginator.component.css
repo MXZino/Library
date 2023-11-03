@@ -1,0 +1,3 @@
+.page-item:not(.disabled) .page-link {
+  cursor: pointer;
+}

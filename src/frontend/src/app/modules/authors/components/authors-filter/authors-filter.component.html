@@ -1,1 +1,13 @@
-<p>authors-filter works!</p>
+<div class="row g-3 align-items-center">
+  <div class="col-auto">
+    <label for="name" class="col-form-label">Nazwa</label>
+  </div>
+  <div class="col-auto">
+    <input id="name" class="form-control" [(ngModel)]="filterName">
+  </div>
+</div>
+
+<div class="my-2">
+  <button class="btn btn-outline-primary" (click)="applyFilter()">Filtruj</button>
+</div>
+

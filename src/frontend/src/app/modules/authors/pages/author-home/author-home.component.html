@@ -1,3 +1,14 @@
 <app-loader>
-  <app-authors-list [authors]="authorsWithBooksResult?.items" [currentPage]="1" [itemsPerPage]="20"></app-authors-list>
+  <app-authors-filter [name]="name" (filterApplied)="applyFilter($event)"></app-authors-filter>
+
+  <app-authors-list [authors]="authorsWithBooksResult?.items" [currentPage]="authorsWithBooksResult?.currentPage!" [itemsPerPage]="authorsWithBooksResult?.pageSize!"></app-authors-list>
+
+  <app-paginator
+    [currentPage]="page"
+    [totalPageCount]="authorsWithBooksResult?.totalPages ?? 0"
+    [recordsPerPage]="recordsPerPage"
+    [totalRecords]="authorsWithBooksResult?.totalCount!"
+    (pageSelected)="onPageSelected($event)"
+    (recordsPerPageChanged)="onRecordsPerPageChanged($event)">
+  </app-paginator>
 </app-loader>

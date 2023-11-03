@@ -13,7 +13,7 @@
   </thead>
   <tbody>
   <tr *ngFor="let author of authors; index as i">
-    <th scope="row">{{ (currentPage -1)*itemsPerPage + i + 1 }}</th>
+    <th scope="row">{{ (currentPage - 1) * itemsPerPage + i + 1 }}</th>
     <td>{{ author.firstName }}</td>
     <td>{{ author.lastName }}</td>
     <td>{{ author.dateOfBirth | date:'yyyy-MM-dd HH:mm:ss'}}</td>

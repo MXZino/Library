@@ -6,6 +6,8 @@ import {AuthorDetailComponent} from './pages/author-detail/author-detail.compone
 import {AuthorsListComponent} from './components/authors-list/authors-list.component';
 import {AuthorsFilterComponent} from './components/authors-filter/authors-filter.component';
 import {LoaderModule} from "../loader/loader.module";
+import {PaginatorModule} from "../paginator/paginator.module";
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -19,6 +21,8 @@ import {LoaderModule} from "../loader/loader.module";
     CommonModule,
     AuthorsRoutingModule,
     LoaderModule,
+    PaginatorModule,
+    FormsModule,
   ]
 })
 export class AuthorsModule {

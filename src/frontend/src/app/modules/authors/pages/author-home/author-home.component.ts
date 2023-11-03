@@ -23,8 +23,20 @@ export class AuthorHomeComponent implements OnInit{
   ngOnInit(): void {
     this.route.queryParamMap.subscribe(params => {
       this.name = params.get('name');
+
       this.page = Number(params.get('page')) || 1;
+
+      if(this.page < 1)
+        this.page = 1;
+
       this.recordsPerPage = Number(params.get('recordsPerPage')) || 20;
+
+      if(this.recordsPerPage < 10)
+        this.recordsPerPage = 10;
+
+      if(this.recordsPerPage > 100)
+        this.recordsPerPage = 100;
+
       this.getAllAuthors();
     });
   }
@@ -50,5 +62,22 @@ export class AuthorHomeComponent implements OnInit{
       queryParams: { page: this.page, recordsPerPage: this.recordsPerPage, name: this.name },
       queryParamsHandling: 'merge'
     });
+  }
+
+  public onPageSelected(page: number){
+    this.page = page;
+    this.getAllAuthors();
+  }
+
+  public onRecordsPerPageChanged(recordsPerPage: number) {
+    this.page = 1;
+    this.recordsPerPage = recordsPerPage;
+    this.getAllAuthors()
+  }
+
+  applyFilter(filterName: string) {
+    this.name = filterName;
+    this.page = 1;
+    this.getAllAuthors();
   }
 }
