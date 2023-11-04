@@ -5,9 +5,10 @@ import {AuthorHomeComponent} from './pages/author-home/author-home.component';
 import {AuthorDetailComponent} from './pages/author-detail/author-detail.component';
 import {AuthorsListComponent} from './components/authors-list/authors-list.component';
 import {AuthorsFilterComponent} from './components/authors-filter/authors-filter.component';
-import {LoaderModule} from "../loader/loader.module";
-import {PaginatorModule} from "../paginator/paginator.module";
 import {FormsModule} from "@angular/forms";
+import { AuthorAddComponent } from './pages/author-add/author-add.component';
+import { AuthorEditComponent } from './pages/author-edit/author-edit.component';
+import {SharedModule} from "../shared/shared.module";
 
 
 @NgModule({
@@ -15,14 +16,15 @@ import {FormsModule} from "@angular/forms";
     AuthorHomeComponent,
     AuthorDetailComponent,
     AuthorsListComponent,
-    AuthorsFilterComponent
+    AuthorsFilterComponent,
+    AuthorAddComponent,
+    AuthorEditComponent
   ],
   imports: [
     CommonModule,
     AuthorsRoutingModule,
-    LoaderModule,
-    PaginatorModule,
     FormsModule,
+    SharedModule,
   ]
 })
 export class AuthorsModule {

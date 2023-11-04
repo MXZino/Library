@@ -1,1 +1,45 @@
-<p>author-detail works!</p>
+<h4>Dane autora</h4>
+
+<app-loader>
+  <label>Imię i nazwisko</label>
+  <div class="fw-bold mb-2">{{author?.firstName}} {{author?.lastName}}</div>
+
+  <label>Data urodzin</label>
+  <div class="fw-bold mb-2">{{author?.dateOfBirth | date:'yyyy-MM-dd HH:mm:ss'}}</div>
+
+  <label>Opis</label>
+  <div class="fw-bold mb-2">{{author?.description}}</div>
+
+  <label>Ostatnio modyfikowano</label>
+  <div class="fw-bold mb-2">{{author?.modified | date:'yyyy-MM-dd HH:mm:ss'}}</div>
+
+  <label>Utworzono</label>
+  <div class="fw-bold mb-2">{{author?.created | date:'yyyy-MM-dd HH:mm:ss'}}</div>
+
+  <label>Lista książek</label>
+  <table class="table table-dark table-striped-columns">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Tytuł</th>
+      <th scope="col">Rok</th>
+      <th scope="col">Ibnr</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let book of author?.books; index as i" style="cursor: pointer;" [routerLink]="['/books', book.id]">
+      <th scope="row">{{i + 1 }}</th>
+      <td>{{ book.title }}</td>
+      <td>{{ book.year }}</td>
+      <td>{{ book.ibnr }}</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <div class="d-flex">
+    <div class="me-2">
+      <app-edit-button [path]="editAuthorPath"></app-edit-button>
+    </div>
+    <app-delete-button [text]="removeAuthorText" (onConfirm)="removeAuthor()"></app-delete-button>
+  </div>
+</app-loader>

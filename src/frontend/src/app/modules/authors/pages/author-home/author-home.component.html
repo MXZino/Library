@@ -1,7 +1,8 @@
 <app-loader>
   <app-authors-filter [name]="name" (filterApplied)="applyFilter($event)"></app-authors-filter>
 
-  <app-authors-list [authors]="authorsWithBooksResult?.items" [currentPage]="authorsWithBooksResult?.currentPage!" [itemsPerPage]="authorsWithBooksResult?.pageSize!"></app-authors-list>
+  <app-authors-list [authors]="authorsWithBooksResult?.items" [currentPage]="authorsWithBooksResult?.currentPage!"
+                    [itemsPerPage]="authorsWithBooksResult?.pageSize!"></app-authors-list>
 
   <app-paginator
     [currentPage]="page"
@@ -12,3 +13,4 @@
     (recordsPerPageChanged)="onRecordsPerPageChanged($event)">
   </app-paginator>
 </app-loader>
+

@@ -3,7 +3,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {AuthorsHttpService} from "../../services/http/authors-http.service";
 import {PageResult} from "../../../shared/interfaces/page-result";
 import {AuthorWithBooks} from "../../interfaces/author-with-books";
-import {LoaderService} from "../../../loader/services/loader.service";
+import {LoaderService} from "../../../shared/services/loader.service";
 
 @Component({
   selector: 'app-author-home',
