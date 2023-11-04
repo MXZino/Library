@@ -10,15 +10,16 @@ namespace Library.Endpoints.Endpoints.Authors;
 
 public class GetAuthorEndpoint(IMediator mediator) : EndpointBaseAsync.WithRequest<Guid>.WithResult<AuthorWithBooksDto>
 {
-    [HttpGet(ApiConfiguration.Authors)]
-    [SwaggerOperation(Summary = "Get author with id", 
-        Description = "Get author", 
+    [HttpGet($"{ApiConfiguration.Authors}" + "/{authorId}")]
+    [SwaggerOperation(Summary = "Get author with id",
+        Description = "Get author",
         OperationId = "Author_Get",
         Tags = new[] { "Authors" })]
-    public override async Task<AuthorWithBooksDto> HandleAsync([FromQuery] Guid authorId, CancellationToken cancellationToken = new CancellationToken())
+    public override async Task<AuthorWithBooksDto> HandleAsync([FromRoute] Guid authorId,
+        CancellationToken cancellationToken = new CancellationToken())
     {
         var result = await mediator.Send(new GetAuthorByIdQuery(authorId), cancellationToken);
-        
+
         return result;
     }
 }
