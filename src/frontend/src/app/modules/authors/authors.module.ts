@@ -5,11 +5,10 @@ import {AuthorHomeComponent} from './pages/author-home/author-home.component';
 import {AuthorDetailComponent} from './pages/author-detail/author-detail.component';
 import {AuthorsListComponent} from './components/authors-list/authors-list.component';
 import {AuthorsFilterComponent} from './components/authors-filter/authors-filter.component';
-import {FormsModule} from "@angular/forms";
-import { AuthorAddComponent } from './pages/author-add/author-add.component';
-import { AuthorEditComponent } from './pages/author-edit/author-edit.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {AuthorAddComponent} from './pages/author-add/author-add.component';
+import {AuthorEditComponent} from './pages/author-edit/author-edit.component';
 import {SharedModule} from "../shared/shared.module";
-
 
 @NgModule({
   declarations: [
@@ -25,6 +24,7 @@ import {SharedModule} from "../shared/shared.module";
     AuthorsRoutingModule,
     FormsModule,
     SharedModule,
+    ReactiveFormsModule,
   ]
 })
 export class AuthorsModule {

@@ -4,6 +4,7 @@ import {catchError, Observable, throwError} from 'rxjs';
 import {AuthorWithBooks} from "../../interfaces/author-with-books";
 import {environment} from "../../../../../environments/environment";
 import {PageResult} from "../../../shared/interfaces/page-result";
+import {AddAuthor} from "../../interfaces/add-author";
 
 @Injectable({
   providedIn: 'root'
@@ -46,6 +47,16 @@ export class AuthorsHttpService {
       .pipe(
         catchError(error => {
           console.log('Error while deleting author:', error);
+          return throwError(error);
+        })
+      );
+  }
+
+  addAuthor(author: AddAuthor): Observable<any> {
+    return this.http.post(`${environment.apiUrl}/api/authors`, author)
+      .pipe(
+        catchError(error => {
+          console.log('Error while adding author:', error);
           return throwError(error);
         })
       );

@@ -16,6 +16,8 @@ export class AuthorHomeComponent implements OnInit{
   page: number = 1;
   recordsPerPage: number = 20;
   authorsWithBooksResult: PageResult<AuthorWithBooks> | null = null;
+  addButtonText: string = "Dodaj autora";
+  addButtonPath: string = "authors/add";
 
   constructor(private route: ActivatedRoute, private http: AuthorsHttpService, private router: Router, private loaderService: LoaderService) {
   }
