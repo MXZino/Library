@@ -20,6 +20,8 @@ export class BookHomeComponent implements OnInit {
 
   booksWithAuthors: PageResult<BookWithAuthor> | null = null;
 
+  addButtonText = "Dodaj książkę";
+  addButtonPath = "books/add";
   constructor(private route: ActivatedRoute, private http: BooksHttpService, private router: Router, private loaderService: LoaderService) {
   }
 

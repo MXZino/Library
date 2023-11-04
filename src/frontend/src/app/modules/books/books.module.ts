@@ -7,7 +7,8 @@ import {BooksRoutingModule} from "./books-routing.module";
 import {SharedModule} from "../shared/shared.module";
 import { BooksFilterComponent } from './components/books-filter/books-filter.component';
 import { BooksListComponent } from './components/books-list/books-list.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { BookAddComponent } from './pages/book-add/book-add.component';
 
 @NgModule({
   declarations: [
@@ -15,13 +16,15 @@ import {FormsModule} from "@angular/forms";
     BookEditComponent,
     BookDetailComponent,
     BooksFilterComponent,
-    BooksListComponent
+    BooksListComponent,
+    BookAddComponent
   ],
   imports: [
     CommonModule,
     BooksRoutingModule,
     SharedModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class BooksModule { }

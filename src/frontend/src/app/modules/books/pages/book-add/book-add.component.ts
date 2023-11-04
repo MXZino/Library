@@ -1,22 +1,20 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {EditBook} from "../../interfaces/edit-book";
-import {ActivatedRoute, Router} from "@angular/router";
+import {Router} from "@angular/router";
 import {BooksHttpService} from "../../services/books-http.service";
 
 @Component({
-  selector: 'app-book-edit',
-  templateUrl: './book-edit.component.html',
-  styleUrls: ['./book-edit.component.css']
+  selector: 'app-book-add',
+  templateUrl: './book-add.component.html',
+  styleUrls: ['./book-add.component.css']
 })
-export class BookEditComponent implements OnInit {
+export class BookAddComponent implements OnInit{
   bookForm!: FormGroup;
   bookData!: EditBook;
-  bookId!: string;
 
   constructor(
     private formBuilder: FormBuilder,
-    private route: ActivatedRoute,
     private http: BooksHttpService,
     private router: Router) {
   }
@@ -28,15 +26,6 @@ export class BookEditComponent implements OnInit {
       ibnr: ['', Validators.required],
       year: ['', Validators.required]
     });
-
-    this.bookId = this.route.snapshot.paramMap.get('guid')!;
-    this.http.getBook(this.bookId).subscribe({
-      next: (data) => {
-        const {title, author, ibnr, year} = data;
-        this.bookData = {id: this.bookId, title, ibnr, year, authorId: author.id};
-        this.bookForm.patchValue(this.bookData);
-      }
-    });
   }
 
   onSubmit() {
@@ -45,12 +34,11 @@ export class BookEditComponent implements OnInit {
     }
 
     this.bookData = this.bookForm.value;
-    this.bookData.id = this.bookId;
 
-    this.http.editBook(this.bookData).subscribe({
+    this.http.addBook(this.bookData).subscribe({
       next: () => {
-        this.router.navigate(["books", this.bookId]);
-        alert("Poprawnie edytowano książkę");
+        this.router.navigate(["books"]);
+        alert("Poprawnie dodano książkę");
       },
       error: (err) => {
         console.error('Error:', err);

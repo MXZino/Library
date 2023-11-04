@@ -43,7 +43,7 @@ export class AuthorsHttpService {
       );
   }
 
-  removeAuthor(authorId: string): Observable<AuthorWithBooks> {
+  removeAuthor(authorId: string): Observable<any> {
     return this.http.delete<AuthorWithBooks>(`${environment.apiUrl}/api/authors/${authorId}`)
       .pipe(
         catchError(error => {
