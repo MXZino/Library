@@ -25,6 +25,6 @@ services:
     container_name: Library.Frontend  
     build: ./src/frontend/.
     ports:
-      - 4200:4200
+      - 8081:4200
     depends_on:
       - library-endpoints

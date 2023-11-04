@@ -11,7 +11,7 @@ public static partial class ServiceCollectionExtensions
             options.AddPolicy(name: "Angular",
                 builder =>
                 {
-                    builder.WithOrigins("http://localhost:4200")
+                    builder.WithOrigins("http://localhost:4200", "http://localhost:8081")
                         .AllowAnyHeader()
                         .AllowAnyMethod();
                 });
