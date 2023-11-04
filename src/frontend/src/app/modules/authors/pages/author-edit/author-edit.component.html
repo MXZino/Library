@@ -1,1 +1,23 @@
-<p>author-edit works!</p>
+<form [formGroup]="authorForm" (ngSubmit)="onSubmit()" class="m-3">
+  <div class="mb-3">
+    <label for="firstName" class="form-label">First Name:</label>
+    <input type="text" id="firstName" formControlName="firstName" required class="form-control">
+  </div>
+
+  <div class="mb-3">
+    <label for="lastName" class="form-label">Last Name:</label>
+    <input type="text" id="lastName" formControlName="lastName" required class="form-control">
+  </div>
+
+  <div class="mb-3">
+    <label for="dateOfBirth" class="form-label">Date of Birth:</label>
+    <input type="datetime-local" id="dateOfBirth" formControlName="dateOfBirth" required class="form-control">
+  </div>
+
+  <div class="mb-3">
+    <label for="description" class="form-label">Description:</label>
+    <input type="text" id="description" formControlName="description" class="form-control">
+  </div>
+
+  <button type="submit" [disabled]="authorForm.invalid" class="btn btn-primary">Submit</button>
+</form>

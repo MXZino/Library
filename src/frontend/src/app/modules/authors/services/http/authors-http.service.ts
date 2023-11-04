@@ -5,6 +5,7 @@ import {AuthorWithBooks} from "../../interfaces/author-with-books";
 import {environment} from "../../../../../environments/environment";
 import {PageResult} from "../../../shared/interfaces/page-result";
 import {AddAuthor} from "../../interfaces/add-author";
+import {EditAuthor} from "../../interfaces/edit-author";
 
 @Injectable({
   providedIn: 'root'
@@ -47,6 +48,7 @@ export class AuthorsHttpService {
       .pipe(
         catchError(error => {
           console.log('Error while deleting author:', error);
+          alert(error.message);
           return throwError(error);
         })
       );
@@ -57,6 +59,18 @@ export class AuthorsHttpService {
       .pipe(
         catchError(error => {
           console.log('Error while adding author:', error);
+          alert(error.message);
+          return throwError(error);
+        })
+      );
+  }
+
+  editAuthor(author: EditAuthor): Observable<any> {
+    return this.http.put(`${environment.apiUrl}/api/authors`, author)
+      .pipe(
+        catchError(error => {
+          console.log('Error while editing author:', error);
+          alert(error.message);
           return throwError(error);
         })
       );
