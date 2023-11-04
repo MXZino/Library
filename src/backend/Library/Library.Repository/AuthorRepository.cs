@@ -30,4 +30,9 @@ public class AuthorRepository : RepositoryBase<Author>, IAuthorRepository
 
         return result;
     }
+
+    public override Author? Get(Guid id) =>
+        DatabaseContext.Authors
+            .Include(x => x.Books)
+            .FirstOrDefault(x => x.Id == id);
 }
