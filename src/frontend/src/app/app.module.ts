@@ -7,6 +7,7 @@ import { HomePageComponent } from './modules/shared/pages/home-page/home-page.co
 import {AppRoutingModule} from "./app-routing.module";
 import {HttpClientModule} from "@angular/common/http";
 import {AuthorsModule} from "./modules/authors/authors.module";
+import {BooksModule} from "./modules/books/books.module";
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import {AuthorsModule} from "./modules/authors/authors.module";
   ],
   imports: [
     AuthorsModule,
+    BooksModule,
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,

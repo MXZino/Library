@@ -27,7 +27,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let book of author?.books; index as i" style="cursor: pointer;" [routerLink]="['/books', book.id]">
+    <tr *ngFor="let book of author?.books!; index as i" style="cursor: pointer;" [routerLink]="['/books', book.id]">
       <th scope="row">{{i + 1 }}</th>
       <td>{{ book.title }}</td>
       <td>{{ book.year }}</td>
