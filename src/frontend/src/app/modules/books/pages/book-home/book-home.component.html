@@ -1,1 +1,15 @@
-<p>book-home works!</p>
+<app-loader>
+  <app-books-filter [filter]="booksFilter" (filterApplied)="applyFilter($event)"></app-books-filter>
+
+  <app-books-list [books]="booksWithAuthors?.items" [currentPage]="booksWithAuthors?.currentPage!"
+                    [itemsPerPage]="booksWithAuthors?.pageSize!"></app-books-list>
+
+  <app-paginator
+    [currentPage]="page"
+    [totalPageCount]="booksWithAuthors?.totalPages ?? 0"
+    [recordsPerPage]="recordsPerPage"
+    [totalRecords]="booksWithAuthors?.totalCount!"
+    (pageSelected)="onPageSelected($event)"
+    (recordsPerPageChanged)="onRecordsPerPageChanged($event)">
+  </app-paginator>
+</app-loader>

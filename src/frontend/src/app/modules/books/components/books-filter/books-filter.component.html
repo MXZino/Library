@@ -1,0 +1,28 @@
+<div class="row g-3 align-items-center">
+
+  <div class="col-auto">
+    <label for="title" class="col-form-label">Tytuł</label>
+  </div>
+  <div class="col-auto">
+    <input id="title" class="form-control" [(ngModel)]="filterForm.title">
+  </div>
+
+  <div class="col-auto">
+    <label for="author" class="col-form-label">Autor</label>
+  </div>
+  <div class="col-auto">
+    <input id="author" class="form-control" [(ngModel)]="filterForm.authorName">
+  </div>
+
+  <div class="col-auto">
+    <label for="year-equal-greater-than" class="col-form-label">Od roku</label>
+  </div>
+  <div class="col-auto">
+    <input id="year-equal-greater-than" class="form-control" type="number" [(ngModel)]="filterForm.yearEqualGreaterThan">
+  </div>
+
+</div>
+
+<div class="my-2">
+  <button class="btn btn-outline-primary" (click)="applyFilter()">Filtruj</button>
+</div>

@@ -9,14 +9,14 @@ namespace Library.Endpoints.Endpoints.Books;
 
 public class RemoveAuthorEndpoint(IMediator mediator) : EndpointBaseAsync.WithRequest<Guid>.WithActionResult
 {
-    [HttpDelete(ApiConfiguration.Books)]
+    [HttpDelete($"{ApiConfiguration.Books}" + "/{bookId}")]
     [SwaggerOperation(Summary = "Remove book with id", 
         Description = "Remove book", 
         OperationId = "Book_Remove",
         Tags = new[] { "Books" })]
-    public override async Task<ActionResult> HandleAsync([FromQuery] Guid request, CancellationToken cancellationToken = new CancellationToken())
+    public override async Task<ActionResult> HandleAsync([FromRoute] Guid bookId, CancellationToken cancellationToken = new CancellationToken())
     {
-        await mediator.Send(new RemoveBookCommand(request), cancellationToken);
+        await mediator.Send(new RemoveBookCommand(bookId), cancellationToken);
 
         return NoContent();
     }

@@ -10,14 +10,14 @@ namespace Library.Endpoints.Endpoints.Books;
 
 public class GetBookEndpoint(IMediator mediator) : EndpointBaseAsync.WithRequest<Guid>.WithResult<BookWithAuthorDto>
 {
-    [HttpGet(ApiConfiguration.Books)]
+    [HttpGet($"{ApiConfiguration.Books}" + "/{bookId}")]
     [SwaggerOperation(Summary = "Get book with id", 
         Description = "Get book", 
         OperationId = "Book_Get",
         Tags = new[] { "Books" })]
-    public override async Task<BookWithAuthorDto> HandleAsync([FromQuery] Guid request, CancellationToken cancellationToken = new CancellationToken())
+    public override async Task<BookWithAuthorDto> HandleAsync([FromRoute] Guid bookId, CancellationToken cancellationToken = new CancellationToken())
     {
-        var result = await mediator.Send(new GetBookByIdQuery(request), cancellationToken);
+        var result = await mediator.Send(new GetBookByIdQuery(bookId), cancellationToken);
         
         return result;
     }
